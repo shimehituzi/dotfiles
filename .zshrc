@@ -64,8 +64,6 @@ alias rt='rmtrash'
 alias invim="cd ~/.config/nvim/;nvim *.vim *.toml"
 alias zshrc="nvim ~/.zshrc"
 alias cdd="cd ~/Dropbox"
-alias todropvimrc="\\cp -vfr ~/.config/nvim/ ~/Dropbox/dotfiles/nvim/"
-alias fromdropvimrc="\\cp -vfr ~/Dropbox/dotfiles/nvim/ ~/.config/nvim/"
 alias nvimtex="pyenv shell neovim3;NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
 alias be="bundle exec"
 alias rmds="\\rm -v .DS_Store;echo"
