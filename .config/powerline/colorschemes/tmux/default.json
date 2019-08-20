@@ -1,0 +1,36 @@
+{
+	"groups": {
+		"background":                 { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": [] },
+		"background:divider":         { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": [] },
+
+		"active_window_status":       { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": []},
+		"window_status":              { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": []},
+		"activity_status":            { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": []},
+		"bell_status":                { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": []},
+		"window":                     { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": []},
+		"window:divider":             { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": []},
+		"window:current":             { "fg": "lucario:white",                 "bg": "lucario:orange",                    "attrs": []},
+		"window_name":                { "fg": "lucario:white",                 "bg": "lucario:orange",                    "attrs": ["bold"]},
+		"session":                    { "fg": "lucario:white",                 "bg": "lucario:gray",                      "attrs": ["bold"]},
+		"session:prefix":             { "fg": "lucario:white",                 "bg": "lucario:orange",                    "attrs": ["bold"]},
+
+		"information:additional":     { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": [] },
+        "information:regular":        { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": ["bold"] },
+        "information:highlighted":    { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": [] },
+		"information:priority":       { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": [] },
+		"warning:regular":            { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": ["bold"] },
+		"critical:failure":           { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": [] },
+		"critical:success":           { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": [] },
+
+		"date":                       { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": [] },
+		"time":                       { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": ["bold"] },
+		"time:divider":               { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": [] },
+		"cpu_load_percent":           { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": [] },
+		"cpu_load_percent_gradient":  { "fg": "green_yellow_orange_red",       "bg": "lucario:background",                "attrs": [] },
+		"attached_clients":           { "fg": "lucario:white",                 "bg": "lucario:background",                "attrs": [] },
+		"battery":                    { "fg": "gray8",                         "bg": "lucario:background",                    "attrs": [] },
+		"battery_gradient":           { "fg": "white_red",                     "bg": "lucario:background",                    "attrs": [] },
+		"battery_full":               { "fg": "red",                           "bg": "lucario:background",                    "attrs": [] },
+		"battery_empty":              { "fg": "white",                         "bg": "lucario:background",                    "attrs": [] }
+	}
+}
