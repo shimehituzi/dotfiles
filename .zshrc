@@ -60,6 +60,7 @@ POWERLEVEL9K_STATUS_ERROR_FOREGROUND="white"
 
 
 # 自分好みのエイリアス
+alias sagh="ssh-add -K ~/.ssh/id_rsa_github"
 alias rt='rmtrash'
 alias invim="cd ~/.config/nvim/;nvim *.vim *.toml"
 alias zshrc="nvim ~/.zshrc"
