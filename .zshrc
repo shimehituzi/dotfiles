@@ -70,8 +70,8 @@ alias be="bundle exec"
 alias rmds="\\rm -v .DS_Store;echo"
 alias reinstalldeinplugins="cd ~/.cache;\rm -rf dein/;cd ~/;sh ~/.cache/dein_installer.sh ~/.cache/dein;nvim ~/.config/nvim/*.vim ~/.config/nvim/*.toml"
 alias pry="bundle exec pry --simple-prompt"
-alias startps="brew services start postgresql"
-alias stopps="brew services stop postgresql"
+alias startpg="brew services start postgresql"
+alias stoppg="brew services stop postgresql"
 alias rm="echo 'use rt command!'"
 
 # macbook用
