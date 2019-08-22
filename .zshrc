@@ -64,6 +64,7 @@ alias sagh="ssh-add -K ~/.ssh/id_rsa_github"
 alias rt='rmtrash'
 alias invim="cd ~/.config/nvim/;nvim *.vim *.toml"
 alias zshrc="nvim ~/.zshrc ~/Dropbox/dotfiles/.zshrc"
+alias tmks="tmux kill-server"
 alias cdd="cd ~/Dropbox"
 alias ra="bin/rails"
 alias be="bundle exec"
