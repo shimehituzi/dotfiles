@@ -71,10 +71,10 @@ alias be="bundle exec"
 alias rmds="\\rm -v .DS_Store;echo"
 alias nvimtex="pyenv shell neovim3;NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
 alias reinstalldeinplugins="cd ~/.cache;\rm -rf dein/;cd ~/;sh ~/.cache/dein_installer.sh ~/.cache/dein;nvim ~/.config/nvim/*.vim ~/.config/nvim/*.toml"
-alias pry="bundle exec pry --simple-prompt"
 alias startpg="brew services start postgresql"
 alias stoppg="brew services stop postgresql"
 alias rm="echo 'use rt command!'"
+alias pry="bundle exec pry --simple-prompt"
 
 # macbook用
 POWERLEVEL9K_BATTERY_LOW_BACKGROUND='cyan'
@@ -89,4 +89,4 @@ POWERLEVEL9K_BATTERY_LOW_THRESHOLD=15
 POWERLEVEL9K_BATTERY_VERBOSE=false
 
 # 一時的なエイリアス
-alias work="echo ''"
+alias work=""
