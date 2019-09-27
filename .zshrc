@@ -63,6 +63,7 @@ POWERLEVEL9K_STATUS_ERROR_FOREGROUND="white"
 alias sagh="ssh-add -K ~/.ssh/id_rsa_github"
 alias rt='rmtrash'
 alias lar='ls -aR'
+alias sds='find . -name .DS_Store'
 alias invim="cd ~/.config/nvim/;nvim *.vim *.toml"
 alias zshrc="nvim ~/.zshrc ~/Dropbox/dotfiles/.zshrc"
 alias tmks="tmux kill-server"
