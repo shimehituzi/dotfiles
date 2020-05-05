@@ -19,6 +19,12 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pipenv --completion)"
 export PYENV_PATH="$HOME/.pyenv"
+export PATH=$(stack path --local-bin):$PATH
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+eval "$(stack --bash-completion-script stack)"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+eval "$(hub alias -s)"
 
 # vimでescが押された後のタイムラグを防ぐ
 KEYTIMEOUT=1
@@ -59,26 +65,42 @@ POWERLEVEL9K_STATUS_ERROR_BACKGROUND="red"
 POWERLEVEL9K_STATUS_ERROR_FOREGROUND="white"
 
 
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/shimehituzi/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
 # 自分好みのエイリアス
-alias nvimc="nvim -c cd\\$1"
+alias nv='(){nvim -c "cd $1"}'
+alias ns='nvim -c "cd src"'
+alias mc='(){mkdir $1 && cd $1}'
+alias relogin='exec $SHELL -l'
+alias gpo='git push origin'
+alias gbcp='(){git branch $1 && git checkout $1 && git push origin $1}'
+alias gcpd='(){git checkout master && git pull && git branch -d $1}'
+alias jss='(){json-server -p 3001 -w $1}'
+alias hb="stack build"
+alias h="stack exec ${PWD##*/}-exe"
+alias hh="hb && clear && echo '--- stack exec ---\n\n' && h"
+alias ghci="stack ghci"
+alias runghc="stack runghc -- -isrc app/Main.hs"
 alias gphm="git push heroku master"
-alias sagh="ssh-add -K ~/.ssh/id_rsa_github"
 alias rt='rmtrash'
 alias lar='ls -aR'
 alias sds='find . -name .DS_Store'
-alias invim="cd ~/.config/nvim/;nvim *.vim *.toml *.json"
+alias sagh="ssh-add -K ~/.ssh/id_rsa_github"
+alias invim="cd ~/.config/nvim/;nvim *.vim *.toml *.json colors/*.vim"
 alias zshrc="nvim ~/.zshrc ~/Dropbox/dotfiles/.zshrc"
 alias tmks="tmux kill-server"
 alias cdd="cd ~/Dropbox"
 alias ra="bin/rails"
 alias be="bundle exec"
+alias rs2="bin/rails s -p 3001"
 alias rmds="\\rm -v .DS_Store;echo"
 alias nvimtex="pyenv shell neovim3;NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
 alias reinstalldeinplugins="cd ~/.cache;\rm -rf dein/;cd ~/;sh ~/.cache/dein_installer.sh ~/.cache/dein;nvim ~/.config/nvim/*.vim ~/.config/nvim/*.toml"
+alias pry="bundle exec pry --simple-prompt"
 alias startpg="brew services start postgresql"
 alias stoppg="brew services stop postgresql"
 alias rm="echo 'use rt command!'"
-alias pry="bundle exec pry --simple-prompt"
 
 # macbook用
 POWERLEVEL9K_BATTERY_LOW_BACKGROUND='cyan'
