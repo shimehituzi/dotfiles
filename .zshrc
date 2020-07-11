@@ -68,12 +68,67 @@ POWERLEVEL9K_STATUS_ERROR_FOREGROUND="white"
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/shimehituzi/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
+# 自分好みの関数
+dopr() {
+  if [ $# != 1 ]; then
+    echo "引数が必要ですブランチ名を指定してください．"
+    return 1
+  fi
+  while :
+  do
+    read "DATA1?$(basename $(pwd)) に対してプルリクエストを作成しますか？ (yes/no): "
+    if [ "$DATA1" = "yes" ]; then
+      break
+    elif [ "$DATA1" = "no" ]; then
+      echo "中止しました"
+      return 1
+    else
+      echo "yes か no と入力してください"
+    fi
+  done
+  while :
+  do
+    read  "DATA2?ブランチ $1 を作成し $1 から master に対するプルリクエストを作成しますか？ (yes/no): "
+    if [ "$DATA2" = "yes" ]; then
+      git checkout -b $1
+      git commit --allow-empty -m "init $1 branch"
+      git push origin $1
+      git pull-request -b "master"
+      return 0
+    elif [ "$DATA2" = "no" ]; then
+      echo "中止しました"
+      return 1
+    else
+      echo "yes か no と入力してください"
+    fi
+  done
+}
+
+prdone() {
+  REPO=$(git rev-parse --abbrev-ref HEAD)
+  while :
+  do
+    read "DATA1?$ master を pull してブランチ $REPO を削除しますか  (yes/no): "
+    if [ "$DATA1" = "yes" ]; then
+      git checkout master
+      git pull
+      git branch -d $REPO
+      return 0
+    elif [ "$DATA1" = "no" ]; then
+      echo "中止しました"
+      return 1
+    else
+      echo "yes か no と入力してください"
+    fi
+  done
+}
+
 # 自分好みのエイリアス
 alias nv='(){nvim -c "cd $1"}'
 alias ns='nvim -c "cd src"'
 alias mc='(){mkdir $1 && cd $1}'
 alias relogin='exec $SHELL -l'
-alias gpo='git push origin'
+alias gpo='git push origin $(git rev-parse --abbrev-ref HEAD)'
 alias gbcp='(){git branch $1 && git checkout $1 && git push origin $1}'
 alias gcpd='(){git checkout master && git pull && git branch -d $1}'
 alias jss='(){json-server -p 3001 -w $1}'
