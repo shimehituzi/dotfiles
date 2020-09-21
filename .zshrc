@@ -156,6 +156,7 @@ alias pry="bundle exec pry --simple-prompt"
 alias startpg="brew services start postgresql"
 alias stoppg="brew services stop postgresql"
 alias rm="echo 'use rt command!'"
+alias ch='open -n -a "Google Chrome" --args -incognito'
 
 # macbook用
 POWERLEVEL9K_BATTERY_LOW_BACKGROUND='cyan'
